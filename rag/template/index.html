@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>QA System-----based on RAG</h1>
+        <h3>What can I help with?</h3>
+        
+        <div id="chatbox">
+            <div id="messages"></div>
+        </div>
+       
+        <input type="text" id="user_input" placeholder="Message QA System" />
+        <button id="submit_btn">Submit</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
