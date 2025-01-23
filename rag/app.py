@@ -11,7 +11,7 @@ import openai
 # 設定 OpenAI API 金鑰
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='rag/templates', static_folder='rag/static')
 
 # 聊天歷史記錄
 chat_history = []
@@ -27,7 +27,7 @@ def get_response():
         return jsonify({'error': 'No user input provided'})
 
     embeddings = OpenAIEmbeddings()
-    db = Chroma(persist_directory="./db/temp/", embedding_function=embeddings)
+    db = Chroma(persist_directory="./rag/db/temp/", embedding_function=embeddings)
     docs = db.similarity_search(user_input)
     
     llm = ChatOpenAI(
