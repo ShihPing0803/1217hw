@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能問答系統</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>智能問答系統</h1>
+            <h3>有什麼我可以幫忙的嗎？</h3>
+        </header>
+        <main>
+            <section class="input-section">
+                <textarea id="question" rows="4" placeholder="請輸入您的問題..."></textarea>
+                <button id="askButton">送出</button>
+            </section>
+            <section class="response-section">
+                <h3>回答：</h3>
+                <div id="answer" class="answer-box"></div>
+                <div id="spinnerContainer" class="spinner-container" style="display: none;">
+                    <div class="spinner"></div>
+                </div>
+            </section>
+            <section class="chat-section">
+                <div id="chatbox">
+                    <div id="messages"></div>
+                </div>
+                <input type="text" id="user_input" placeholder="Message QA System" />
+                <button id="submit_btn">Submit</button>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
